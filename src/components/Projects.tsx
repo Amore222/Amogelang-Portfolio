@@ -5,7 +5,7 @@ import melula_p from '../assets/melula.png';
 import recipe_p from '../assets/recipe.png';
 import streaming from '../assets/Streaming.png';
 import task from '../assets/task-todo.png';
-import hospi from '../assets/hospital.png';
+import hospi from '../assets/hospi_2.png';
 
 const projects = [
   {

@@ -1,7 +1,7 @@
 import { Github, Linkedin, Twitter, Mail, Code2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import profileImage from '../assets/ms-amo.jpg';
+import profileImage from '../assets/MyPic.jpeg';
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/Amore222', label: 'GitHub', color: 'hover:text-purple-500' },
@@ -73,11 +73,11 @@ export function Hero() {
               }}
               transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
             />
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border-4 border-primary/20 bg-accent/50 backdrop-blur-sm">
+            <div className="relative w-64 md:w-80  rounded-3xl overflow-hidden border-4 border-primary/20 bg-accent/50 backdrop-blur-sm">
               <ImageWithFallback
                 src={profileImage}
                 alt="Profile"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover "
               />
               {/* Pixel corner decorations */}
               <div className="absolute top-2 left-2 w-4 h-4 border-l-4 border-t-4 border-purple-500" />
