@@ -3,7 +3,7 @@ import { ExternalLink, Github, Hospital, Sparkles } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import melula_p from '../assets/melula.png';
 import recipe_p from '../assets/recipe.png';
-import streaming from '../assets/Streaming.png';
+import streaming from '../assets/movie.png';
 import task from '../assets/task-todo.png';
 import hospi from '../assets/hospi_2.png';
 

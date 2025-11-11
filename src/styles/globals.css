@@ -187,3 +187,24 @@
 html {
   font-size: var(--font-size);
 }
+/* Light mode (default) */
+:root {
+  --background: #ffffff;   /* Light background */
+  --foreground: #000000;   /* Dark text */
+  --accent: #f0f0f0;
+  --primary: #6b21a8; /* example purple */
+}
+
+/* Dark mode */
+.dark {
+  --background: #0f0f0f;   /* Dark background */
+  --foreground: #ffffff;   /* Light text */
+  --accent: #1f1f1f;
+  --primary: #d946ef; /* brighter purple for dark */
+}
+
+/* Utility classes for Tailwind */
+.bg-background { background-color: var(--background); }
+.text-foreground { color: var(--foreground); }
+.bg-accent { background-color: var(--accent); }
+.text-primary { color: var(--primary); }

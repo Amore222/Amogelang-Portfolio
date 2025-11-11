@@ -18,7 +18,7 @@ export function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-primary/20"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/80 dark:bg-[#0f0f0f]/80 backdrop-blur-lg border-b border-primary/20 dark:border-[#ffffff33] transition-colors duration-300"
     >
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
@@ -37,7 +37,9 @@ export function Navigation() {
                 transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
               />
             </div>
-            <span className="hidden sm:block">Amogelang Ntia</span>
+            <span className="hidden sm:block text-foreground dark:text-white transition-colors">
+              Amogelang Ntia
+            </span>
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -50,7 +52,7 @@ export function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.1 }}
-                className="text-sm hover:text-primary transition-colors relative group"
+                className="text-sm text-foreground dark:text-white hover:text-primary transition-colors relative group"
               >
                 {item.label}
                 <motion.div
@@ -66,12 +68,12 @@ export function Navigation() {
           {/* Theme Toggle & Mobile Menu Button */}
           <div className="flex items-center gap-4">
             <ThemeToggle />
-            
+
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden w-10 h-10 rounded-lg bg-accent/50 border border-primary/20 flex items-center justify-center"
+              className="md:hidden w-10 h-10 rounded-lg bg-accent/50 dark:bg-[#1f1f1f]/50 border border-primary/20 dark:border-[#ffffff33] flex items-center justify-center transition-colors"
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isOpen ? <X className="w-5 h-5 text-foreground dark:text-white" /> : <Menu className="w-5 h-5 text-foreground dark:text-white" />}
             </button>
           </div>
         </div>
@@ -80,7 +82,7 @@ export function Navigation() {
         <motion.div
           initial={false}
           animate={{ height: isOpen ? 'auto' : 0 }}
-          className="md:hidden overflow-hidden"
+          className="md:hidden overflow-hidden transition-all duration-300"
         >
           <div className="py-4 space-y-2">
             {navItems.map((item) => (
@@ -89,7 +91,7 @@ export function Navigation() {
                 href={item.href}
                 onClick={() => setIsOpen(false)}
                 whileTap={{ scale: 0.95 }}
-                className="block px-4 py-2 rounded-lg hover:bg-accent transition-colors"
+                className="block px-4 py-2 rounded-lg hover:bg-accent dark:hover:bg-[#2a2a2a] text-foreground dark:text-white transition-colors"
               >
                 {item.label}
               </motion.a>
