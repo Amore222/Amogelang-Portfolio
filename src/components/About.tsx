@@ -93,7 +93,7 @@ export function About() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-muted-foreground pl-4 space-y-1"
               >
-                <p>{'> Passionate about creating intuitive and performant web applications'}</p>
+                <p>{'> Passionate about creating intuitive and performance web applications'}</p>
                 <p>{'> 1+ years of experience in front-end development'}</p>
                 <p>{'> Love solving complex problems with elegant solutions'}</p>
                 <p>{'> Open source contributor and continuous learner'}</p>

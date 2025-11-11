@@ -1,30 +1,70 @@
-import { motion } from 'motion/react';
-import { Code2, Database, Laptop, Boxes } from 'lucide-react';
+import { motion } from "motion/react";
+import {
+  FaReact,
+  FaGitAlt,
+  FaFigma,
+  FaAngular,
+  FaLock,
+  FaTools,
+  FaProjectDiagram,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiMongodb,
+  SiMysql,
+  SiPostman,
+  SiSwagger,
+  SiTypescript,
+  SiNodedotjs,
+  SiExpress,
+  SiTrello,
+} from "react-icons/si";
+import { Code2, Database, Laptop, Boxes } from "lucide-react";
 
 const techCategories = [
   {
-    title: 'Frontend',
+    title: "Frontend",
     icon: Laptop,
-    color: 'from-purple-500 to-pink-500',
-    techs: ['React/React Native', 'TypeScript', 'Angular', 'Tailwind CSS'],
+    color: "from-purple-500 to-pink-500",
+    techs: [
+      { name: "React / React Native", icon: <FaReact className="text-cyan-400" /> },
+      { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
+      { name: "Angular", icon: <FaAngular className="text-red-500" /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400" /> },
+    ],
   },
   {
-    title: 'Backend',
+    title: "Backend",
     icon: Database,
-    color: 'from-cyan-500 to-blue-500',
-    techs: ['SQL/MySQL','Node.js', 'Express', 'MongoDB'],
+    color: "from-cyan-500 to-blue-500",
+    techs: [
+      { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
+      { name: "Express", icon: <SiExpress className="text-gray-400" /> },
+      { name: "SQL / MySQL", icon: <SiMysql className="text-blue-600" /> },
+      { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
+    ],
   },
   {
-    title: 'Tools',
+    title: "Tools",
     icon: Code2,
-    color: 'from-pink-500 to-orange-500',
-    techs: ['Git/GitHub', 'Figma', 'Notion / Trello', 'Postman'],
+    color: "from-pink-500 to-orange-500",
+    techs: [
+      { name: "Git / GitHub", icon: <FaGitAlt className="text-orange-500" /> },
+      { name: "Figma", icon: <FaFigma className="text-pink-500" /> },
+      { name: "Postman", icon: <SiPostman className="text-orange-400" /> },
+      { name: "Trello", icon: <SiTrello className="text-gray-400" /> },
+    ],
   },
   {
-    title: 'Other',
+    title: "Other",
     icon: Boxes,
-    color: 'from-green-500 to-teal-500',
-    techs: [ 'REST API',  'Agile', 'Authentication (JWT)', 'API Documentation (Swagger)'],
+    color: "from-green-500 to-teal-500",
+    techs: [
+      { name: "REST API", icon: <FaProjectDiagram className="text-green-500" /> },
+      { name: "Agile", icon: <FaTools className="text-gray-400" /> },
+      { name: "Authentication (JWT)", icon: <FaLock className="text-gray-500" /> },
+      { name: "API Documentation (Swagger)", icon: <SiSwagger className="text-green-600" /> },
+    ],
   },
 ];
 
@@ -32,6 +72,7 @@ export function TechStack() {
   return (
     <section className="py-20 px-4 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,6 +92,7 @@ export function TechStack() {
           </p>
         </motion.div>
 
+        {/* Tech categories */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {techCategories.map((category, categoryIndex) => (
             <motion.div
@@ -78,20 +120,20 @@ export function TechStack() {
                 <div className="space-y-2">
                   {category.techs.map((tech, index) => (
                     <motion.div
-                      key={tech}
+                      key={tech.name}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: categoryIndex * 0.1 + index * 0.05 }}
+                      transition={{
+                        duration: 0.3,
+                        delay: categoryIndex * 0.1 + index * 0.05,
+                      }}
                       whileHover={{ x: 5 }}
                       className="flex items-center gap-2 text-sm group/item"
                     >
-                      <motion.div
-                        className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${category.color}`}
-                        whileHover={{ scale: 1.5 }}
-                      />
+                      {tech.icon}
                       <span className="text-muted-foreground group-hover/item:text-foreground transition-colors">
-                        {tech}
+                        {tech.name}
                       </span>
                     </motion.div>
                   ))}
@@ -114,9 +156,9 @@ export function TechStack() {
           className="mt-12 flex flex-wrap justify-center gap-4"
         >
           {[
-            { label: '⚡ Performance', desc: 'Optimization Pro' },
-            { label: '🎨 UI/UX', desc: 'Design Enthusiast' },
-            { label: '🚀 Ship Fast', desc: 'Agile Developer' },
+            { label: "⚡ Performance", desc: "Optimization" },
+            { label: "🎨 UI/UX", desc: "Design Enthusiast" },
+            { label: "🚀 Ship Fast", desc: "Agile Developer" },
           ].map((badge, index) => (
             <motion.div
               key={badge.label}
