@@ -1,40 +1,34 @@
-import { Github, Linkedin, Twitter, Mail, Code2 } from 'lucide-react';
+import { Github, Linkedin, Mail, Code2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import profileImage from '../assets/MyPic.jpeg';
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/Amore222', label: 'GitHub', color: 'hover:text-purple-500' },
-  { icon: Linkedin, href: 'www.linkedin.com/in/amogelang-ntia-3030b616b', label: 'LinkedIn', color: 'hover:text-blue-500' },
-  { icon: Mail, href: 'ntiarose3@gmail.com', label: 'Email', color: 'hover:text-pink-500' },
+  { icon: Linkedin, href: 'https://linkedin.com/in/amogelang-ntia-3030b616b', label: 'LinkedIn', color: 'hover:text-blue-500' },
+  { icon: Mail, href: 'mailto:ntiarose3@gmail.com', label: 'Email', color: 'hover:text-pink-500' },
 ];
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4">
-      {/* Animated background grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
       
-      {/* Animated gradient orbs */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+
+      
       <motion.div
         className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
+        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 8, repeat: Infinity }}
       />
       <motion.div
         className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/30 rounded-full blur-3xl"
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.3, 0.5, 0.3],
-        }}
+        animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 8, repeat: Infinity }}
       />
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        {/* Social Links - Top */}
+     
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -57,9 +51,9 @@ export function Hero() {
           ))}
         </motion.div>
 
-        {/* Main Content */}
+       
         <div className="flex flex-col md:flex-row items-center gap-12">
-          {/* Profile Picture */}
+       
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -68,18 +62,16 @@ export function Hero() {
           >
             <motion.div
               className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 rounded-3xl blur-xl"
-              animate={{
-                rotate: [0, 360],
-              }}
+              animate={{ rotate: [0, 360] }}
               transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
             />
-            <div className="relative w-64 md:w-80  rounded-3xl overflow-hidden border-4 border-primary/20 bg-accent/50 backdrop-blur-sm">
+            <div className="relative w-64 md:w-80 rounded-3xl overflow-hidden border-4 border-primary/20 bg-accent/50 backdrop-blur-sm">
               <ImageWithFallback
                 src={profileImage}
                 alt="Profile"
-                className="w-full h-full object-cover "
+                className="w-full h-full object-cover"
               />
-              {/* Pixel corner decorations */}
+              
               <div className="absolute top-2 left-2 w-4 h-4 border-l-4 border-t-4 border-purple-500" />
               <div className="absolute top-2 right-2 w-4 h-4 border-r-4 border-t-4 border-cyan-500" />
               <div className="absolute bottom-2 left-2 w-4 h-4 border-l-4 border-b-4 border-pink-500" />
@@ -87,8 +79,8 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Text Content */}
-          <div className="flex-1 text-center md:text-left">
+         
+          <div className="flex-1 text-center md:text-left md:ml-12"> 
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -123,16 +115,19 @@ export function Hero() {
               </p>
             </motion.div>
 
+            
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
               className="flex flex-wrap gap-4 justify-center md:justify-start"
             >
-              <motion.button
+             
+              <motion.a
+                href="#projects"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white relative overflow-hidden group"
+                className="px-8 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white relative overflow-hidden group cursor-pointer"
               >
                 <span className="relative z-10">View Projects</span>
                 <motion.div
@@ -141,34 +136,23 @@ export function Hero() {
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}
                 />
-              </motion.button>
-              
-              <motion.button
+              </motion.a>
+
+    
+              <motion.a
+                href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 rounded-lg border-2 border-primary/20 bg-accent/50 backdrop-blur-sm hover:border-cyan-500/50 transition-colors"
+                className="px-8 py-3 rounded-lg border-2 border-primary/20 bg-accent/50 backdrop-blur-sm hover:border-cyan-500/50 transition-colors cursor-pointer"
               >
-                Download CV
-              </motion.button>
-            </motion.div>
-
-            {/* Gaming Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start"
-            >
-         
-                
-        
-        
+                Let's connect
+              </motion.a>
             </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
+
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
