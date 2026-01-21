@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
-import { ExternalLink, Github, Hospital, Sparkles } from 'lucide-react';
+import { ExternalLink, Github, Sparkles } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ProjectDetail } from './ProjectDetail';
 import melula_p from '../assets/melula.png';
 import recipe_p from '../assets/recipe.png';
 import streaming from '../assets/movie.png';
@@ -15,7 +17,7 @@ const projects = [
     image: recipe_p,
     tags: ['React', 'JavaScript', 'Tailwindcss'],
     gradient: 'from-purple-500 to-pink-500',
-    demoUrl: 'https://recipe-finder-app-bice-zeta.vercel.app/',
+    demoUrl: 'https://recipe-finder-app-r3vk.vercel.app/',
     codeUrl: 'https://github.com/AmogelangNtia/gaming-dashboard',
   },
   {
@@ -62,6 +64,8 @@ const projects = [
 
 
 export function Projects() {
+  const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
+
   return (
     <section className="py-20 px-4 relative overflow-hidden" id="projects">
       {/* Background line */}
@@ -139,34 +143,45 @@ export function Projects() {
                   </div>
 
                   {/* Links */}
-                  <div className="flex gap-3">
-                    {project.demoUrl && (
-                      <motion.a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        Demo
-                      </motion.a>
-                    )}
+                  <div className="flex flex-col gap-3">
+                    <motion.button
+                      onClick={() => setSelectedProjectId(project.id)}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-full px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-medium hover:opacity-90 transition-opacity"
+                    >
+                      View Details
+                    </motion.button>
 
-                    {project.codeUrl && (
-                      <motion.a
-                        href={project.codeUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg border border-primary/20 bg-accent/50 text-sm hover:border-cyan-500/50 transition-colors"
-                      >
-                        <Github className="w-4 h-4" />
-                        Code
-                      </motion.a>
-                    )}
+                    <div className="flex gap-3">
+                      {project.demoUrl && (
+                        <motion.a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="flex items-center justify-center gap-2 flex-1 px-4 py-2 rounded-lg bg-accent/50 text-white text-sm border border-primary/20"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          Demo
+                        </motion.a>
+                      )}
+
+                      {project.codeUrl && (
+                        <motion.a
+                          href={project.codeUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="flex items-center justify-center gap-2 flex-1 px-4 py-2 rounded-lg border border-primary/20 bg-accent/50 text-sm hover:border-cyan-500/50 transition-colors"
+                        >
+                          <Github className="w-4 h-4" />
+                          Code
+                        </motion.a>
+                      )}
+                    </div>
                   </div>
                 </div>
 
@@ -183,6 +198,13 @@ export function Projects() {
           ))}
         </div>
       </div>
+
+      {/* Project Detail Modal */}
+      <ProjectDetail
+        projectId={selectedProjectId || 0}
+        isOpen={selectedProjectId !== null}
+        onClose={() => setSelectedProjectId(null)}
+      />
     </section>
   );
 }
