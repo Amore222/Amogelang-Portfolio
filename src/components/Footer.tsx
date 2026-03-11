@@ -1,20 +1,11 @@
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
-import {
-  Heart,
-  Terminal,
-  Github,
-  Linkedin,
-  Mail,
-  ArrowUp,
-  Code2,
-  Zap,
-} from 'lucide-react';
+import { FiGithub, FiLinkedin, FiMail, FiArrowUp, FiCode, FiTerminal, FiZap } from 'react-icons/fi';
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com/Amore222', label: 'GitHub', color: 'hover:text-purple-500' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/amogelang-ntia-3030b616b', label: 'LinkedIn', color: 'hover:text-blue-500' },
-  { icon: Mail, href: 'mailto:ntiarose3@gmail.com', label: 'Email', color: 'hover:text-pink-500' },
+  { icon: FiGithub, href: 'https://github.com/Amore222', label: 'GitHub', color: 'hover:text-purple-500' },
+  { icon: FiLinkedin, href: 'https://linkedin.com/in/amogelang-ntia-3030b616b', label: 'LinkedIn', color: 'hover:text-blue-500' },
+  { icon: FiMail, href: 'mailto:ntiarose3@gmail.com', label: 'Email', color: 'hover:text-pink-500' },
 ];
 
 const quickLinks = [
@@ -73,7 +64,7 @@ export function Footer() {
               Crafting digital experiences with clean code and creative solutions.
             </p>
             <div className="flex gap-2">
-              {[Code2, Terminal, Zap].map((Icon, index) => (
+              {[FiCode, FiTerminal, FiZap].map((Icon, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0 }}
@@ -179,26 +170,10 @@ export function Footer() {
             viewport={{ once: true }}
             className="flex items-center gap-2"
           >
-            <Terminal className="w-4 h-4" />
-            <span>© 2025 Amogelang Ntia. All rights reserved.</span>
+            <FiTerminal className="w-4 h-4" />
+            <span>© {new Date().getFullYear()} Amogelang Ntia. All rights reserved.</span>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="flex items-center gap-2"
-          >
-            <span>Built with</span>
-            <motion.div
-              animate={{ scale: [1, 1.3, 1], rotate: [0, 5, -5, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <Heart className="w-4 h-4 text-pink-500 fill-pink-500" />
-            </motion.div>
-            <span>React, TypeScript & Tailwind</span>
-          </motion.div>
 
           {/* 👇 Shifted slightly left */}
           <motion.div
@@ -221,7 +196,7 @@ export function Footer() {
         </div>
       </div>
 
-      {/* ✅ Scroll to Top Button (moved below status) */}
+      {/* ✅ Scroll to Top Button (Remains outside Vortex canvas so z-index works clearly) */}
       {isVisible && (
         <motion.button
           initial={{ opacity: 0, scale: 0 }}
@@ -236,7 +211,7 @@ export function Footer() {
             animate={{ y: [-2, 2, -2] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            <ArrowUp className="w-5 h-5" />
+            <FiArrowUp className="w-5 h-5" />
           </motion.div>
           <div className="absolute top-1 left-1 w-2 h-2 border-l border-t border-white/50" />
           <div className="absolute bottom-1 right-1 w-2 h-2 border-r border-b border-white/50" />

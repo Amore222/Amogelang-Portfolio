@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Briefcase, GraduationCap, Trophy, Calendar } from 'lucide-react';
+import { FiBriefcase, FiBook, FiAward, FiCalendar } from 'react-icons/fi';
 
 const experiences = [
   {
@@ -56,7 +56,7 @@ export function Experience() {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-500/20 to-pink-500/20 border border-orange-500/30 mb-4">
-            <Trophy className="w-4 h-4 text-orange-500" />
+            <FiAward className="w-4 h-4 text-orange-500" />
             <span className="text-sm">Quest Log</span>
           </div>
           <h2 className="mb-4 bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
@@ -78,7 +78,7 @@ export function Experience() {
               className="flex items-center gap-3 mb-8"
             >
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                <Briefcase className="w-6 h-6 text-white" />
+                <FiBriefcase className="w-6 h-6 text-white" />
               </div>
               <h3 className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
                 Work Experience
@@ -111,7 +111,7 @@ export function Experience() {
                     <div className="flex items-start justify-between mb-2">
                       <h4>{exp.title}</h4>
                       <div className="flex items-center gap-1 text-xs text-muted-foreground bg-accent/50 px-3 py-1 rounded-full">
-                        <Calendar className="w-3 h-3" />
+                        <FiCalendar className="w-3 h-3" />
                         {exp.period}
                       </div>
                     </div>
@@ -137,7 +137,7 @@ export function Experience() {
               className="flex items-center gap-3 mb-8"
             >
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
-                <GraduationCap className="w-6 h-6 text-white" />
+                <FiBook className="w-6 h-6 text-white" />
               </div>
               <h3 className="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
                 Education
@@ -170,7 +170,7 @@ export function Experience() {
                     <div className="flex items-start justify-between mb-2">
                       <h4>{edu.degree}</h4>
                       <div className="flex items-center gap-1 text-xs text-muted-foreground bg-accent/50 px-3 py-1 rounded-full">
-                        <Calendar className="w-3 h-3" />
+                        <FiCalendar className="w-3 h-3" />
                         {edu.period}
                       </div>
                     </div>

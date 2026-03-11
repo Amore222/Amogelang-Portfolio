@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { FiMenu, FiX } from 'react-icons/fi';
 import { ThemeToggle } from './ThemeToggle';
 
 const navItems = [
@@ -73,7 +73,7 @@ export function Navigation() {
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden w-10 h-10 rounded-lg bg-accent/50 dark:bg-[#1f1f1f]/50 border border-primary/20 dark:border-[#ffffff33] flex items-center justify-center transition-colors"
             >
-              {isOpen ? <X className="w-5 h-5 text-foreground dark:text-white" /> : <Menu className="w-5 h-5 text-foreground dark:text-white" />}
+              {isOpen ? <FiX className="w-5 h-5 text-foreground dark:text-white" /> : <FiMenu className="w-5 h-5 text-foreground dark:text-white" />}
             </button>
           </div>
         </div>

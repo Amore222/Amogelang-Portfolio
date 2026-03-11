@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { ExternalLink, Github, Sparkles } from 'lucide-react';
+import { FiExternalLink, FiGithub, FiStar } from 'react-icons/fi';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ProjectDetail } from './ProjectDetail';
+import { GlareCard } from './ui/glare-card';
 import melula_p from '../assets/melula.png';
 import recipe_p from '../assets/recipe.png';
 import streaming from '../assets/movie.png';
@@ -80,7 +81,7 @@ export function Projects() {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-500/30 mb-4">
-            <Sparkles className="w-4 h-4 text-cyan-500" />
+            <FiStar className="w-4 h-4 text-cyan-500" />
             <span className="text-sm">Featured Work</span>
           </div>
           <h2 className="mb-4 bg-gradient-to-r from-purple-500 to-cyan-500 bg-clip-text text-transparent text-3xl font-bold">
@@ -102,7 +103,7 @@ export function Projects() {
               whileHover={{ y: -10 }}
               className="group relative"
             >
-              <div className="relative rounded-2xl overflow-hidden bg-card border border-primary/20 hover:border-primary/40 transition-all duration-300">
+              <GlareCard className="flex flex-col h-full bg-card">
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
                   <motion.div
@@ -163,7 +164,7 @@ export function Projects() {
                           whileTap={{ scale: 0.95 }}
                           className="flex items-center justify-center gap-2 flex-1 px-4 py-2 rounded-lg bg-accent/50 text-white text-sm border border-primary/20"
                         >
-                          <ExternalLink className="w-4 h-4" />
+                          <FiExternalLink className="w-4 h-4" />
                           Demo
                         </motion.a>
                       )}
@@ -177,7 +178,7 @@ export function Projects() {
                           whileTap={{ scale: 0.95 }}
                           className="flex items-center justify-center gap-2 flex-1 px-4 py-2 rounded-lg border border-primary/20 bg-accent/50 text-sm hover:border-cyan-500/50 transition-colors"
                         >
-                          <Github className="w-4 h-4" />
+                          <FiGithub className="w-4 h-4" />
                           Code
                         </motion.a>
                       )}
@@ -193,7 +194,7 @@ export function Projects() {
                     className={`absolute inset-0 bg-gradient-to-br ${project.gradient} blur-xl -z-10 opacity-50`}
                   />
                 </div>
-              </div>
+              </GlareCard>
             </motion.div>
           ))}
         </div>

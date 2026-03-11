@@ -1,5 +1,5 @@
 // import { motion } from 'motion/react';
-// import { Mail, MessageSquare, Send, MapPin } from 'lucide-react';
+// import { FiMail, FiMessageSquare, FiSend, FiMapPin } from 'react-icons/fi';
 // import { Button } from './ui/button';
 // import { Input } from './ui/input';
 // import { Textarea } from './ui/textarea';
@@ -19,7 +19,7 @@
 //           className="text-center mb-16"
 //         >
 //           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/20 to-cyan-500/20 border border-green-500/30 mb-4">
-//             <MessageSquare className="w-4 h-4 text-green-500" />
+//             <FiMessageSquare className="w-4 h-4 text-green-500" />
 //             <span className="text-sm">Let's Connect</span>
 //           </div>
 //           <h2 className="mb-4 bg-gradient-to-r from-green-500 to-cyan-500 bg-clip-text text-transparent">
@@ -48,7 +48,7 @@
 //                   className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-primary/20"
 //                 >
 //                   <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
-//                     <Mail className="w-5 h-5 text-white" />
+//                     <FiMail className="w-5 h-5 text-white" />
 //                   </div>
 //                   <div>
 //                     <div className="text-sm text-muted-foreground">Email</div>
@@ -61,7 +61,7 @@
 //                   className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-primary/20"
 //                 >
 //                   <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center flex-shrink-0">
-//                     <MapPin className="w-5 h-5 text-white" />
+//                     <FiMapPin className="w-5 h-5 text-white" />
 //                   </div>
 //                   <div>
 //                     <div className="text-sm text-muted-foreground">Location</div>
@@ -131,7 +131,7 @@
 //                     type="submit"
 //                     className="w-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 hover:opacity-90 transition-opacity"
 //                   >
-//                     <Send className="w-4 h-4 mr-2" />
+//                     <FiSend className="w-4 h-4 mr-2" />
 //                     Send Message
 //                   </Button>
 //                 </motion.div>

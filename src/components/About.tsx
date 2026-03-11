@@ -1,27 +1,27 @@
 import { motion } from 'motion/react';
-import { Terminal, Gamepad2, Coffee, Zap } from 'lucide-react';
+import { FiTerminal, FiPlay, FiCoffee, FiZap } from 'react-icons/fi';
 
 const features = [
   {
-    icon: Terminal,
+    icon: FiTerminal,
     title: 'Code Debugger',
     description: 'Battling bugs and shipping features since day one.',
     color: 'from-purple-500 to-pink-500',
   },
   {
-    icon: Gamepad2,
+    icon: FiPlay,
     title: 'Gaming Mindset',
     description: 'Every problem is a level to beat, every solution is an achievement unlocked.',
     color: 'from-cyan-500 to-blue-500',
   },
   {
-    icon: Coffee,
+    icon: FiCoffee,
     title: 'Fueled by Caffeine',
     description: 'Coffee in, code out. The endless loop of productivity.',
     color: 'from-orange-500 to-pink-500',
   },
   {
-    icon: Zap,
+    icon: FiZap,
     title: 'Fast Learner',
     description: 'Always leveling up with new technologies and frameworks.',
     color: 'from-green-500 to-cyan-500',
@@ -50,7 +50,7 @@ export function About() {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-pink-500/20 to-orange-500/20 border border-pink-500/30 mb-4">
-            <Gamepad2 className="w-4 h-4 text-pink-500" />
+            <FiPlay className="w-4 h-4 text-pink-500" />
             <span className="text-sm">Developer Profile</span>
           </div>
           <h2 className="mb-4 bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent">

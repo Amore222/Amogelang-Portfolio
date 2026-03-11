@@ -1,4 +1,4 @@
-import { Moon, Sun } from 'lucide-react';
+import { FiMoon, FiSun } from 'react-icons/fi';
 import { useTheme } from './ThemeProvider';
 import { motion } from 'motion/react';
 
@@ -21,7 +21,7 @@ export function ThemeToggle() {
         transition={{ duration: 0.3 }}
         className="absolute inset-0 flex items-center justify-center"
       >
-        <Moon className="w-5 h-5 text-primary" />
+        <FiMoon className="w-5 h-5 text-primary" />
       </motion.div>
       <motion.div
         initial={false}
@@ -32,7 +32,7 @@ export function ThemeToggle() {
         transition={{ duration: 0.3 }}
         className="absolute inset-0 flex items-center justify-center"
       >
-        <Sun className="w-5 h-5 text-primary" />
+        <FiSun className="w-5 h-5 text-primary" />
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
     </motion.button>
