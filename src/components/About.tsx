@@ -150,49 +150,7 @@ export function About() {
           ))}
         </div>
 
-        {/* Progress bars - gaming style */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-12 max-w-3xl mx-auto space-y-4"
-        >
-          {[
-            { skill: 'Frontend Development', level: 95, color: 'from-purple-500 to-pink-500' },
-            { skill: 'Backend Development', level: 70, color: 'from-cyan-500 to-blue-500' },
-            { skill: 'UI/UX Design', level: 80, color: 'from-pink-500 to-orange-500' },
-            { skill: 'Problem Solving', level: 98, color: 'from-green-500 to-cyan-500' },
-          ].map((item, index) => (
-            <motion.div
-              key={item.skill}
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-              className="space-y-2"
-            >
-              <div className="flex justify-between items-center">
-                <span className="text-sm">{item.skill}</span>
-              </div>
-              <div className="h-3 rounded-full bg-accent border border-primary/20 overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${item.level}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.6 + index * 0.1 }}
-                  className={`h-full bg-gradient-to-r ${item.color} relative overflow-hidden`}
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                    animate={{ x: ['-100%', '200%'] }}
-                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
-                  />
-                </motion.div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+
       </div>
     </section>
   );
