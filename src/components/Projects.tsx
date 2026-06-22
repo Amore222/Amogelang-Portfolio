@@ -69,7 +69,7 @@ const projects = [
     title: 'Task management system',
     description: 'A productivity platform for managing tasks, tracking progress, and improving team collaboration.',
     image: taskManagement,
-    tags: ['React', 'Typscript','Tailwindcss', 'Nodejs', 'MongoDB'],
+    tags: ['React', 'TypeScript','Tailwindcss', 'Nodejs', 'MongoDB'],
     gradient: 'from-pink-500 to-orange-500',
     demoUrl: 'https://task-management-v91m.onrender.com',
     codeUrl: 'https://github.com/Amore222/Task_Todo.App.git',
