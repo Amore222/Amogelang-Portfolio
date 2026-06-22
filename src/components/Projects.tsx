@@ -9,6 +9,9 @@ import recipe_p from '../assets/recipe.png';
 import streaming from '../assets/movie.png';
 import task from '../assets/task-todo.png';
 import hospi from '../assets/hospi_2.png';
+import youbeauty from '../assets/youbeauty.png';
+import taskManagement from '../assets/task_management.png';
+import portfolio from '../assets/portfolio.png';
 
 const projects = [
   {
@@ -33,26 +36,16 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Melula',
-    description: 'An online store that makes shopping simple, fast, and secure.',
-    image: melula_p,
-    tags: ['React', 'JavaScript', 'HTML','CSS'],
-    gradient: 'from-pink-500 to-orange-500',
-    demoUrl: 'https://melula-app-7mlm.vercel.app/',
-    codeUrl: 'https://github.com/Amore222/Melula-App.git',
-  },
-  {
-    id: 4,
     title: 'Task Todo',
     description: 'Keep track of your tasks and stay organized effortlessly.',
     image: task,
-    tags: ['React', 'JavaScript','Tailwind'],
+    tags: ['React', 'JavaScript','Tailwindcss'],
     gradient: 'from-pink-500 to-orange-500',
     demoUrl: 'https://task-tracker-app-drn3.vercel.app/',
     codeUrl: 'https://github.com/Amore222/TaskTracker-App.git',
   },
   {
-    id: 5,
+    id: 4,
     title: 'Hospital File Management System',
     description: 'Help hospitals manage patient records and daily tasks smoothly.',
     image: hospi,
@@ -60,6 +53,36 @@ const projects = [
     gradient: 'from-pink-500 to-orange-500',
     demoUrl: '#',
     codeUrl: 'https://github.com/JonathanKeamogetswe/TechMasters-Hospital-file-management-sys.git',
+  },
+  {
+    id: 5,
+    title: 'You-Beauty',
+    description: 'An online store that makes shopping simple, fast, and secure.',
+    image: youbeauty,
+    tags: ['React', 'JavaScript','HTML','Tailwindcss'],
+    gradient: 'from-pink-500 to-orange-500',
+    demoUrl: 'https://you-beauty-app.vercel.app/',
+    codeUrl: 'https://github.com/Amore222/You-beauty.App.git',
+  },
+   {
+    id: 6,
+    title: 'Task management system',
+    description: 'A productivity platform for managing tasks, tracking progress, and improving team collaboration.',
+    image: taskManagement,
+    tags: ['React', 'Typscript','Tailwindcss', 'Nodejs', 'MongoDB'],
+    gradient: 'from-pink-500 to-orange-500',
+    demoUrl: 'https://task-management-v91m.onrender.com',
+    codeUrl: 'https://github.com/Amore222/Task_Todo.App.git',
+  },
+  {
+    id: 7,
+    title: 'Portfolio',
+    description: 'A portfolio website for showcasing projects and skills.',
+    image: portfolio,
+    tags: ['React', 'TypeScript','Tailwindcss', 'Framer-motion'],
+    gradient: 'from-pink-500 to-orange-500',
+    demoUrl: 'https://amogelang-portfolio-fvm6.vercel.app/',
+    codeUrl: 'https://github.com/Amore222/Amogelang-Portfolio.git',
   },
 ];
 
