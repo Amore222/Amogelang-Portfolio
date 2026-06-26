@@ -3,7 +3,8 @@ import { FiGithub, FiLinkedin, FiMail, FiCode } from 'react-icons/fi';
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import profileImage from '../assets/MyPic.jpeg';
+import featuredProjectImg from '../assets/task_management.png';
+import { Floating3DObject } from './ui/Floating3DObject';
 
 const socialLinks = [
 	{
@@ -94,19 +95,18 @@ export function Hero() {
 		>
 			<div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:15px_15px]" />
 
-			{/* Parallax orbs that run away from mouse */}
+			{/* Parallax orb */}
 			<motion.div
 				className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl pointer-events-none"
 				style={{ x: orb1X, y: orb1Y }}
 				animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
 				transition={{ duration: 8, repeat: Infinity }}
 			/>
-			<motion.div
-				className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/30 rounded-full blur-3xl pointer-events-none"
-				style={{ x: orb2X, y: orb2Y }}
-				animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
-				transition={{ duration: 8, repeat: Infinity }}
-			/>
+			
+			{/* 3D Interactive Floating Object */}
+			<div className="absolute inset-0 z-0 pointer-events-auto opacity-60">
+				<Floating3DObject />
+			</div>
 
 			<div className="relative z-10 max-w-6xl mx-auto">
 				<div className="flex flex-col md:flex-row items-center gap-12">
@@ -147,8 +147,8 @@ export function Hero() {
 							/>
 							<div className="relative w-64 md:w-80 rounded-3xl overflow-hidden border-4 border-primary/20 bg-accent/50 backdrop-blur-sm">
 								<ImageWithFallback
-									src={profileImage}
-									alt="Profile"
+									src={featuredProjectImg}
+									alt="Featured Project"
 									className="w-full h-full object-cover"
 								/>
 								{/* Holographic sheen overlay */}
@@ -179,9 +179,9 @@ export function Hero() {
 							initial={{ opacity: 0, x: -50 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.5, delay: 0.5 }}
-							className="mb-4 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 bg-clip-text text-transparent"
+							className="mb-4 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 bg-clip-text text-transparent text-5xl md:text-7xl font-extrabold tracking-tight"
 						>
-							Level Up Your Code
+							Crafting Digital Experiences
 						</motion.h1>
 
 						<motion.div
@@ -217,14 +217,11 @@ export function Hero() {
 								href="#projects"
 								whileHover={{ scale: 1.05 }}
 								whileTap={{ scale: 0.95 }}
-								className="px-8 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white relative overflow-hidden group cursor-pointer"
+								className="px-8 py-4 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white relative overflow-hidden group cursor-pointer shadow-lg shadow-purple-500/20 text-lg font-bold"
 							>
-								<span className="relative z-10">View Projects</span>
+								<span className="relative z-10">Explore My Work</span>
 								<motion.div
-									className="absolute inset-0 bg-gradient-to-r from-pink-500 to-cyan-500"
-									initial={{ x: '100%' }}
-									whileHover={{ x: 0 }}
-									transition={{ duration: 0.3 }}
+									className="absolute inset-0 bg-gradient-to-r from-pink-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
 								/>
 							</motion.a>
 

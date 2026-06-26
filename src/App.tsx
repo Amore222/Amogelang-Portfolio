@@ -11,7 +11,6 @@ import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Projects } from './components/Projects';
-import { TechStack } from './components/TechStack';
 // import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { GlobalVortexBackground } from './components/GlobalVortexBackground';
@@ -46,9 +45,8 @@ export default function App() {
             {/* Main content */}
             <main className="pt-20">
               <Hero />
-              <About />
-              <TechStack />
               <Projects />
+              <About />
               {/* <Contact /> */}
             </main>
 
