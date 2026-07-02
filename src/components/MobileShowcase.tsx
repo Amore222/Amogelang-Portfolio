@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
 import { FiUser } from 'react-icons/fi';
+import { SiReact, SiTypescript, SiNextdotjs, SiNodedotjs, SiMongodb, SiTailwindcss, SiExpress, SiFramer, SiPostgresql, SiSupabase, SiTurborepo } from 'react-icons/si';
+import { TbBrandCpp, TbBrandCSharp, TbBrandVisualStudio, TbSql } from 'react-icons/tb';
 import myPicImg from '../assets/amo.jpg';
 
 export function MobileShowcase() {
@@ -64,14 +66,27 @@ export function MobileShowcase() {
             <p className="mb-2"><span className="text-green-500">➜</span> <span className="text-cyan-500">~</span> cat experience.txt</p>
             <p className="mb-6 text-yellow-400 font-medium">▹ 2 Years of Professional Experience</p>
             
-            <p className="mb-2"><span className="text-green-500">➜</span> <span className="text-cyan-500">~</span> cat passion.json</p>
-            <pre className="mb-6 text-purple-400 whitespace-pre-wrap font-mono text-xs md:text-sm">
-{`{
-  "focus": "Building dynamic user interfaces",
-  "style": "Aesthetic & Interactive",
-  "tools": ["React", "Motion", "Tailwind"]
-}`}
-            </pre>
+            <p className="mb-2"><span className="text-green-500">➜</span> <span className="text-cyan-500">~</span> ls tech-stack/</p>
+            <div className="mb-6 flex flex-wrap gap-x-6 gap-y-3 text-blue-400 font-semibold tracking-wide">
+              <span className="flex items-center gap-1.5"><SiReact className="w-4 h-4 text-[#61DAFB]" /> React.js</span>
+              <span className="flex items-center gap-1.5"><SiTypescript className="w-4 h-4 text-[#3178C6]" /> TypeScript</span>
+              <span className="flex items-center gap-1.5"><SiNextdotjs className="w-4 h-4 text-white" /> Next.js</span>
+              <span className="flex items-center gap-1.5"><SiNodedotjs className="w-4 h-4 text-[#339933]" /> Node.js</span>
+              <span className="flex items-center gap-1.5"><SiMongodb className="w-4 h-4 text-[#47A248]" /> MongoDB</span>
+              <span className="flex items-center gap-1.5"><SiTailwindcss className="w-4 h-4 text-[#06B6D4]" /> TailwindCSS</span>
+              <span className="flex items-center gap-1.5"><SiExpress className="w-4 h-4 text-white" /> Express.js</span>
+              <span className="flex items-center gap-1.5"><SiFramer className="w-4 h-4 text-[#0055FF]" /> FramerMotion</span>
+              <span className="flex items-center gap-1.5"><TbBrandVisualStudio className="w-4 h-4 text-[#5C2D91]" /> Visual Basic</span>
+              <span className="flex items-center gap-1.5"><TbBrandCpp className="w-4 h-4 text-[#00599C]" /> C++</span>
+              <span className="flex items-center gap-1.5"><TbBrandCSharp className="w-4 h-4 text-[#239120]" /> C#</span>
+              <span className="flex items-center gap-1.5"><TbSql className="w-4 h-4 text-[#F29111]" /> SQL</span>
+              <span className="flex items-center gap-1.5"><SiPostgresql className="w-4 h-4 text-[#4169E1]" /> PostgreSQL</span>
+              <span className="flex items-center gap-1.5"><SiSupabase className="w-4 h-4 text-[#3ECF8E]" /> Supabase</span>
+              <span className="flex items-center gap-1.5"><SiTurborepo className="w-4 h-4 text-[#EF4444]" /> Turborepo</span>
+              <span className="flex items-center gap-1.5"><SiReact className="w-4 h-4 text-[#61DAFB]" /> React Native</span>
+            </div>
+            
+
             
             <p className="mb-2"><span className="text-green-500">➜</span> <span className="text-cyan-500">~</span> ./init_creative_mode.sh</p>
             <p className="text-pink-400 animate-pulse">Injecting styles... [OK]</p>

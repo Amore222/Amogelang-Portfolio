@@ -5,116 +5,26 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ProjectDetail } from './ProjectDetail';
 import { GlareCard } from './ui/glare-card';
 import { SpotlightCard } from './ui/spotlight-card';
-import { ModernCarousel } from './ui/modern-carousel';
-import melula_p from '../assets/melula.png';
-import recipe_p from '../assets/recipe.png';
-import streaming from '../assets/movie.png';
-import task from '../assets/task-todo.png';
-import hospi from '../assets/hospi_2.png';
-import youbeauty from '../assets/youbeauty.png';
-import taskManagement from '../assets/task_management.png';
-import portfolio from '../assets/portfolio.png';
-import posImg from '../assets/POS.png';
-
-const projects = [
-
-  {
-    id: 1,
-    title: '0.0S POS',
-    description: 'A Point of Sale system with cashier till, owner/admin dashboards, real-time transactions, and role-based staff permissions.',
-    image: posImg,
-    tags: ['Next.js', 'Express', 'TypeScript', 'Prisma', 'Supabase', 'PostgreSQL', 'Tailwindcss', 'Turborepo'],
-    gradient: 'from-purple-500 to-cyan-500',
-    demoUrl: 'https://www.00s.co.za/',
-    codeUrl: '#',
-  },
-  
-  {
-    id: 2,
-    title: 'Streaming Movies',
-    description: 'Watch your favorite movies online with a smooth, easy-to-use platform.',
-    image: streaming,
-    tags: ['React', 'JavaScript', 'Node.js', 'Tailwindcss'],
-    gradient: 'from-cyan-500 to-blue-500',
-    demoUrl: 'https://streaming-cinego-app-3.onrender.com',
-    codeUrl: 'https://github.com/amogelang/finbridge',
-  },
-  {
-    id: 3,
-    title: 'Task Todo',
-    description: 'Keep track of your tasks and stay organized effortlessly.',
-    image: task,
-    tags: ['React', 'JavaScript','Tailwindcss'],
-    gradient: 'from-pink-500 to-orange-500',
-    demoUrl: 'https://task-tracker-app-drn3.vercel.app/',
-    codeUrl: 'https://github.com/Amore222/TaskTracker-App.git',
-  },
-  {
-    id: 4,
-    title: 'Hospital File Management System',
-    description: 'Help hospitals manage patient records and daily tasks smoothly.',
-    image: hospi,
-    tags: ['React', 'JavaScript','HTML','CSS'],
-    gradient: 'from-pink-500 to-orange-500',
-    demoUrl: '#',
-    codeUrl: 'https://github.com/JonathanKeamogetswe/TechMasters-Hospital-file-management-sys.git',
-  },
-  {
-    id: 5,
-    title: 'You-Beauty',
-    description: 'An online store that makes shopping simple, fast, and secure.',
-    image: youbeauty,
-    tags: ['React', 'JavaScript','HTML','Tailwindcss'],
-    gradient: 'from-pink-500 to-orange-500',
-    demoUrl: 'https://you-beauty-app.vercel.app/',
-    codeUrl: 'https://github.com/Amore222/You-beauty.App.git',
-  },
-   {
-    id: 6,
-    title: 'Task management system',
-    description: 'A productivity platform for managing tasks, tracking progress, and improving team collaboration.',
-    image: taskManagement,
-    tags: ['React', 'TypeScript','Tailwindcss', 'Nodejs', 'MongoDB'],
-    gradient: 'from-pink-500 to-orange-500',
-    demoUrl: 'https://task-management-v91m.onrender.com',
-    codeUrl: 'https://github.com/Amore222/Task_Todo.App.git',
-  },
-  {
-    id: 7,
-    title: 'Portfolio',
-    description: 'A portfolio website for showcasing projects and skills.',
-    image: portfolio,
-    tags: ['React', 'TypeScript','Tailwindcss', 'Framer-motion'],
-    gradient: 'from-pink-500 to-orange-500',
-    demoUrl: 'https://amogelang-portfolio-fvm6.vercel.app/',
-    codeUrl: 'https://github.com/Amore222/Amogelang-Portfolio.git',
-  },
-  {
-    id: 8,
-    title: 'Recipe Finder',
-    description: 'Find and explore recipes easily with a simple, interactive interface.',
-    image: recipe_p,
-    tags: ['React', 'JavaScript', 'Tailwindcss'],
-    gradient: 'from-purple-500 to-pink-500',
-    demoUrl: 'https://recipe-finder-app-r3vk.vercel.app/',
-    codeUrl: 'https://github.com/AmogelangNtia/gaming-dashboard',
-  },
-
-];
+import { projectsDetails as projects } from '../data/projectsData';
 
 
 export function Projects() {
   const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const projectsPerPage = 4;
+  const totalPages = Math.ceil(projects.length / projectsPerPage);
+  const currentProjects = projects.slice((currentPage - 1) * projectsPerPage, currentPage * projectsPerPage);
 
   const renderProjectCard = (project: typeof projects[0], isActive: boolean) => (
-    <div className="h-full group">
+    <div className="h-full group relative transition-all duration-500 hover:-translate-y-2">
       <SpotlightCard className="h-full" spotlightColor="rgba(6, 182, 212, 0.15)">
-        <GlareCard className="flex flex-col h-full bg-card relative z-10 border border-primary/20 bg-card/80 backdrop-blur-sm">
+        <GlareCard className="flex flex-col h-full bg-card relative z-10 border border-primary/20 bg-card/80 backdrop-blur-sm group-hover:border-cyan-500/40 group-hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] transition-all duration-500">
           {/* Image */}
-          <div className="relative h-48 overflow-hidden">
+          <div className="relative h-64 overflow-hidden rounded-t-xl">
             <motion.div
-              whileHover={isActive ? { scale: 1.1 } : {}}
-              transition={{ duration: 0.3 }}
+              whileHover={isActive ? { scale: 1.15 } : {}}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               className="w-full h-full"
             >
               <ImageWithFallback
@@ -131,31 +41,26 @@ export function Projects() {
           </div>
 
           {/* Content */}
-          <div className="p-6">
+          <div className="p-6 flex flex-col flex-1">
             <h3 className="mb-2 font-semibold text-white group-hover:text-cyan-400 transition-colors duration-300">{project.title}</h3>
             <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
               {project.description}
             </p>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2 mb-4">
-              {project.tags.slice(0, 3).map((tag) => (
+            <div className="flex flex-wrap gap-2 mb-6">
+              {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 rounded-full bg-accent/50 text-xs border border-primary/20 backdrop-blur-md"
+                  className="px-3 py-1 rounded-full bg-accent/50 text-[11px] font-medium border border-primary/20 backdrop-blur-md text-white/90 shadow-sm"
                 >
                   {tag}
                 </span>
               ))}
-              {project.tags.length > 3 && (
-                <span className="px-3 py-1 rounded-full bg-accent/50 text-xs border border-primary/20 backdrop-blur-md">
-                  +{project.tags.length - 3}
-                </span>
-              )}
             </div>
 
             {/* Links */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 mt-auto">
               <motion.button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -231,17 +136,49 @@ export function Projects() {
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <ModernCarousel
-            items={projects}
-            renderItem={renderProjectCard}
-          />
-        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {currentProjects.map((project, index) => {
+            return (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1, type: "spring", bounce: 0.3 }}
+                className="h-full min-h-[460px] col-span-1"
+              >
+                {renderProjectCard(project, true)}
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Pagination Controls */}
+        <div className="flex justify-center items-center gap-4 mt-12">
+          <button 
+            onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+            disabled={currentPage === 1}
+            className="px-5 py-2.5 rounded-full bg-card/80 border border-primary/20 disabled:opacity-50 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors text-white font-medium text-sm backdrop-blur-md"
+          >
+            Previous
+          </button>
+          <div className="flex gap-2">
+            {Array.from({ length: totalPages }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentPage(i + 1)}
+                className={`w-2.5 h-2.5 rounded-full transition-colors ${currentPage === i + 1 ? 'bg-cyan-400' : 'bg-gray-600 hover:bg-gray-400'}`}
+                aria-label={`Go to page ${i + 1}`}
+              />
+            ))}
+          </div>
+          <button 
+            onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+            disabled={currentPage === totalPages}
+            className="px-5 py-2.5 rounded-full bg-card/80 border border-primary/20 disabled:opacity-50 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors text-white font-medium text-sm backdrop-blur-md"
+          >
+            Next
+          </button>
+        </div>
       </div>
 
       {/* Project Detail Modal */}
