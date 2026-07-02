@@ -94,7 +94,7 @@ export function About() {
                 className="text-muted-foreground pl-4 space-y-1"
               >
                 <p>{'> Passionate about creating intuitive and performance web applications'}</p>
-                <p>{'> 1+ years of experience in front-end development'}</p>
+                <p>{'> 2+ years of experience in front-end development'}</p>
                 <p>{'> Love solving complex problems with elegant solutions'}</p>
                 <p>{'> Open source contributor and continuous learner'}</p>
                 <p>{'> When not coding: tv series, coffee, repeat'}</p>

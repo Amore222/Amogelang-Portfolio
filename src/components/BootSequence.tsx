@@ -7,7 +7,7 @@ const bootLines = [
   'Mounting file systems...',
   'Starting network interfaces...',
   'Resolving dependencies...',
-  'Loading Amogelang OS...',
+  'Loading System OS...',
   'Bypassing secure boot...',
   'Decrypting user profile...',
   'Executing launch sequence...',

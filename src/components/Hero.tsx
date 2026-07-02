@@ -139,27 +139,7 @@ export function Hero() {
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.5, delay: 0.2 }}
 					>
-						<TiltCard>
-							<motion.div
-								className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 rounded-3xl blur-xl"
-								animate={{ rotate: [0, 360] }}
-								transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-							/>
-							<div className="relative w-64 md:w-80 rounded-3xl overflow-hidden border-4 border-primary/20 bg-accent/50 backdrop-blur-sm">
-								<ImageWithFallback
-									src={featuredProjectImg}
-									alt="Featured Project"
-									className="w-full h-full object-cover"
-								/>
-								{/* Holographic sheen overlay */}
-								<div className="absolute inset-0 opacity-0 hover:opacity-20 transition-opacity duration-300 bg-gradient-to-br from-white via-transparent to-transparent pointer-events-none" />
-
-								<div className="absolute top-2 left-2 w-4 h-4 border-l-4 border-t-4 border-purple-500" />
-								<div className="absolute top-2 right-2 w-4 h-4 border-r-4 border-t-4 border-cyan-500" />
-								<div className="absolute bottom-2 left-2 w-4 h-4 border-l-4 border-b-4 border-pink-500" />
-								<div className="absolute bottom-2 right-2 w-4 h-4 border-r-4 border-b-4 border-purple-500" />
-							</div>
-						</TiltCard>
+								
 					</motion.div>
 
 					<div className="flex-1 text-center md:text-left md:ml-12">

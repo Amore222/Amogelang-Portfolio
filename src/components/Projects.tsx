@@ -14,18 +14,21 @@ import hospi from '../assets/hospi_2.png';
 import youbeauty from '../assets/youbeauty.png';
 import taskManagement from '../assets/task_management.png';
 import portfolio from '../assets/portfolio.png';
+import posImg from '../assets/POS.png';
 
 const projects = [
+
   {
     id: 1,
-    title: 'Recipe Finder',
-    description: 'Find and explore recipes easily with a simple, interactive interface.',
-    image: recipe_p,
-    tags: ['React', 'JavaScript', 'Tailwindcss'],
-    gradient: 'from-purple-500 to-pink-500',
-    demoUrl: 'https://recipe-finder-app-r3vk.vercel.app/',
-    codeUrl: 'https://github.com/AmogelangNtia/gaming-dashboard',
+    title: '0.0S POS',
+    description: 'A Point of Sale system with cashier till, owner/admin dashboards, real-time transactions, and role-based staff permissions.',
+    image: posImg,
+    tags: ['Next.js', 'Express', 'TypeScript', 'Prisma', 'Supabase', 'PostgreSQL', 'Tailwindcss', 'Turborepo'],
+    gradient: 'from-purple-500 to-cyan-500',
+    demoUrl: 'https://www.00s.co.za/',
+    codeUrl: '#',
   },
+  
   {
     id: 2,
     title: 'Streaming Movies',
@@ -86,6 +89,17 @@ const projects = [
     demoUrl: 'https://amogelang-portfolio-fvm6.vercel.app/',
     codeUrl: 'https://github.com/Amore222/Amogelang-Portfolio.git',
   },
+  {
+    id: 8,
+    title: 'Recipe Finder',
+    description: 'Find and explore recipes easily with a simple, interactive interface.',
+    image: recipe_p,
+    tags: ['React', 'JavaScript', 'Tailwindcss'],
+    gradient: 'from-purple-500 to-pink-500',
+    demoUrl: 'https://recipe-finder-app-r3vk.vercel.app/',
+    codeUrl: 'https://github.com/AmogelangNtia/gaming-dashboard',
+  },
+
 ];
 
 

@@ -20,7 +20,7 @@ export function Terminal({ onPlayWordle, isOpen, onToggle }: { onPlayWordle?: ()
       command: '',
       output: (
         <div className="text-cyan-400 mb-2 space-y-1">
-          <p className="font-bold text-sm">Amogelang OS [Version 1.0.0]</p>
+          <p className="font-bold text-sm">System OS [Version 1.0.0]</p>
           <p className="text-gray-400 text-xs">Welcome! This is an interactive terminal.</p>
           <br />
           <p>

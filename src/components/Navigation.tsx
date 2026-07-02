@@ -37,7 +37,7 @@ export function Navigation() {
                 transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
               />
             </div>
-            <span className="hidden sm:block text-foreground dark:text-white transition-colors">
+            <span className="hidden sm:block text-foreground dark:text-white transition-colors font-bold tracking-wide">
               Amogelang Ntia
             </span>
           </motion.a>

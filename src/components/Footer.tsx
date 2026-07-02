@@ -11,7 +11,6 @@ const socialLinks = [
 const quickLinks = [
   { label: 'Home', href: '#' },
   { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -30,7 +29,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden border-t border-primary/20 bg-card/30 backdrop-blur-sm">
+    <footer id="contact" className="relative overflow-hidden border-t border-primary/20 bg-card/30 backdrop-blur-sm">
       {/* Animated gradient line */}
       <motion.div
         className="absolute top-0 left-0 h-px bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500"
@@ -171,7 +170,7 @@ export function Footer() {
             className="flex items-center gap-2"
           >
             <FiTerminal className="w-4 h-4" />
-            <span>© {new Date().getFullYear()} Amogelang Ntia. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} A. Ntia. All rights reserved.</span>
           </motion.div>
 
 
